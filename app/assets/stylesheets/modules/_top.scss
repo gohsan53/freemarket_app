@@ -1,31 +1,28 @@
-// Color
-$icon_bg_color: #56D0D2;
-// Font size
-$searchBox_size: 14px;
-$header_list_size: 14px;
-
-.header{
-  &__top{
+/********************
+ * global HEADER
+********************/
+.header {
+  &__top {
     padding: 15px 60px 0 60px;
     display: flex;
     
-    &__icon{
+    &__icon {
       width: 140px;
       padding-bottom: 10px;
       padding-right: 30px;
     }
-    &__searchBox{
+    &__searchBox {
       width: 100%;
       height: 36px;
       margin-top: 5px;
       display: flex;
       font-size: $searchBox_size;
       
-      &__input{
+      &__input {
         height: 32px;
         width: 100%;
       }
-      &__icon{
+      &__icon {
         background-color: $icon_bg_color;
         width: 20px;
         height: 20px;
@@ -35,14 +32,14 @@ $header_list_size: 14px;
     }
   }
   
-  &__bottom{
+  &__bottom {
     height: 32px;
     padding: 0 60px;
     display: flex;
     justify-content: space-between;
     font-size: $header_list_size;
     
-    ul{
+    ul {
       display: flex;
     }
     &--left{
@@ -53,3 +50,20 @@ $header_list_size: 14px;
     }
   }
 }
+/********************
+ * TOP VISUAL
+********************/
+.topVisual {
+  height: 560px;
+  width: 100%;
+  background-size: cover;
+  background-image: image-url("bg-mainVisual-pict_pc.jpg");
+
+  &__section {
+    color: $bg_font-color;
+  }
+}
+
+/********************
+ * TOP CATEGORY
+********************/

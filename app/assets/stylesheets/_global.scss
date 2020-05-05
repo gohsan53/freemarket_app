@@ -1,4 +1,38 @@
-a{
+/********************
+ * 変数定義
+********************/
+// Background color
+$icon_bg_color: #56D0D2;
+// Font color
+$bg_font-color: #FFFFFF;
+// Font size
+$searchBox_size: 14px;
+$header_list_size: 14px;
+// Font family
+@font-face {
+  font-family: "Furima";
+  src: asset_url("NotoSansJP-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/********************
+ * FURIMAのデフォルト設定
+********************/
+a {
   text-decoration: none;
   color: #333333;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+p {
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Furima';
 }
