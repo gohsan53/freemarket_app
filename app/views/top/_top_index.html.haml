@@ -1,0 +1,34 @@
+.topIndex__title
+  %h2 ピックアップインデックス
+  %h3 <strong>商品サンプル</strong>
+
+.topIndex__contents
+  = link_to '#', class: 'topIndex__contents__itemBox', id: 'newItems3rd' do 
+    = image_tag 'fish.png', class: 'topIndex__contents__itemBox--image', alt: '商品サンプル３'
+    .topIndex__contents__itemBox--summary
+      %name item3
+      %ul{class: 'itemDetails'}
+        %li{class: 'itemDetails__price'} 30000円
+        %li{class: 'itemDetails__star'} ０
+        %li{class: 'itemDetails__star'} ★
+      %p (税込)
+
+  = link_to '#', class: 'topIndex__contents__itemBox', id: 'newItems3rd' do 
+    = image_tag 'meat.png', class: 'topIndex__contents__itemBox--image', alt: '商品サンプル３'
+    .topIndex__contents__itemBox--summary
+      %name item2
+      %ul{class: 'itemDetails'}
+        %li{class: 'itemDetails__price'} 20000円
+        %li{class: 'itemDetails__star'} ０
+        %li{class: 'itemDetails__star'} ★
+      %p (税込)
+
+  = link_to '#', class: 'topIndex__contents__itemBox', id: 'newItems3rd' do 
+    = image_tag 'curry.png', class: 'topIndex__contents__itemBox--image', alt: '商品サンプル３'
+    .topIndex__contents__itemBox--summary
+      %name item1
+      %ul{class: 'itemDetails'}
+        %li{class: 'itemDetails__price'} 10000円
+        %li{class: 'itemDetails__star'} ０
+        %li{class: 'itemDetails__star'} ★
+      %p (税込)

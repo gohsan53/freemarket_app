@@ -2,7 +2,8 @@
  * 変数定義
 ********************/
 // Background color
-$icon_bg_color: #56D0D2;
+$icon_bg-color: #56D0D2;
+$section_bg-color: #F8F8F8;
 
 // Font color
 $bg_font-color: #FFFFFF;
@@ -11,8 +12,10 @@ $highlight-color: #3CCBCD;
 $text_shadow-color: rgb(59, 61, 59);
 
 // Font size
-$searchBox_size: 14px;
-$header_list_size: 14px;
+$searchBox_font-size: 14px;
+$headerList_font-size: 14px;
+$itemIndex_font-size: 16px;
+$tax_font-size: 10px;
                 
 // Font family
 @font-face {
@@ -25,6 +28,13 @@ $header_list_size: 14px;
 /********************
  * MIXIN
 ********************/
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
 @mixin title-underline ($color:$icon_bg_color) {
   content: '';
         display: inline-block;
