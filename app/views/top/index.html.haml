@@ -1,10 +1,13 @@
-.header
+%header
   = render 'layouts/global-header'
-.topVisual
-  = render 'visual'
-.topCategory
-  = render 'category'
-.aside
-  = render 'aside'
-.footer
+.topMain
+  %section.topVisual
+    = render 'visual'
+  %section.topReason
+    = render 'reason'
+  %section.topCategory
+    = render 'category'
+%aside
+  = render 'layouts/global-aside'
+%footer
   = render 'layouts/global-footer'

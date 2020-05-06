@@ -1,23 +1,24 @@
-.header__top
-  = link_to '#', class: 'header__top__icon' do 
-    = image_tag 'logo.png', width: '140', height: '40.547', alt: 'FURIMAロゴ'
-  .header__top__searchBox
-    %input{ type: 'text', class: 'header__top__searchBox__input', placeholder: 'キーワードから探す' }
-    = link_to '#', class: 'header__top__searchBox__icon' do
-      = image_tag 'icon-search 1.png', width: '19.656', height: '19.656', alt: '検索ボタン'
+.wrapper
+  .wrapper__top
+    = link_to '#', class: 'wrapper__top__icon' do 
+      = image_tag 'logo.png', width: '140', height: '40.547', alt: 'FURIMAロゴ'
+    .wrapper__top__searchBox
+      %input{ type: 'text', class: 'wrapper__top__searchBox__input', placeholder: 'キーワードから探す' }
+      = link_to '#', class: 'wrapper__top__searchBox__icon' do
+        = image_tag 'icon-search 1.png', width: '19.656', height: '19.656', alt: '検索ボタン'
 
-.header__bottom
-  %ul
-    %li
-      = link_to '#', class: 'header__bottom--left', id: 'category-search-btn' do
-        カテゴリー
-    %li
-      = link_to '#', class: 'header__bottom--left', id: 'brand-search-btn' do
-        ブランド
-  %ul
-    %li
-      = link_to '#', class: 'header__bottom--right', id: 'login-btn' do
-        ログイン
-    %li
-      = link_to '#', class: 'header__bottom--right', id: 'signup-btn' do
-        新規会員登録
+  .wrapper__bottom
+    %ul
+      %li
+        = link_to '#', class: 'wrapper__bottom--left', id: 'category-search-btn' do
+          カテゴリー
+      %li
+        = link_to '#', class: 'wrapper__bottom--left', id: 'brand-search-btn' do
+          ブランド
+    %ul
+      %li
+        = link_to '#', class: 'wrapper__bottom--right', id: 'login-btn' do
+          ログイン
+      %li
+        = link_to '#', class: 'wrapper__bottom--right', id: 'signup-btn' do
+          新規会員登録

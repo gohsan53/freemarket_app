@@ -3,15 +3,20 @@
 ********************/
 // Background color
 $icon_bg_color: #56D0D2;
+
 // Font color
 $bg_font-color: #FFFFFF;
+$bg_border-color: #D6D5D9;
+$highlight-color: #3CCBCD;
+
 // Font size
 $searchBox_size: 14px;
 $header_list_size: 14px;
+                
 // Font family
 @font-face {
   font-family: "Furima";
-  src: asset_url("NotoSansJP-Regular.otf") format("truetype");
+  src: asset_url("NotoSansJP-Bold.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -28,6 +33,9 @@ a {
 h1 {
   font-size: 60px;
 }
+h2 {
+  font-size: 26px;
+}
 
 p {
   font-size: 18px;
@@ -35,4 +43,8 @@ p {
 
 body {
   font-family: 'Furima';
+}
+
+strong {
+  color: $highlight-color;
 }

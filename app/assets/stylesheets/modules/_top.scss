@@ -1,69 +1,165 @@
 /********************
  * global HEADER
 ********************/
-.header {
-  &__top {
-    padding: 15px 60px 0 60px;
-    display: flex;
-    
-    &__icon {
-      width: 140px;
-      padding-bottom: 10px;
-      padding-right: 30px;
-    }
-    &__searchBox {
-      width: 100%;
-      height: 36px;
-      margin-top: 5px;
-      display: flex;
-      font-size: $searchBox_size;
-      
-      &__input {
-        height: 32px;
-        width: 100%;
-      }
-      &__icon {
-        background-color: $icon_bg_color;
-        width: 20px;
-        height: 20px;
-        padding: 8px;
-        display: inline-block;
-      }
-    }
-  }
-  
-  &__bottom {
-    height: 32px;
-    padding: 0 60px;
-    display: flex;
-    justify-content: space-between;
-    font-size: $header_list_size;
-    
-    ul {
-      display: flex;
-    }
-    &--left{
-      padding-right: 30px;
-    }
-    &--right{
-      padding-left: 16px;
-    }
-  }
-}
-/********************
- * TOP VISUAL
-********************/
-.topVisual {
-  height: 560px;
+header {
   width: 100%;
-  background-size: cover;
-  background-image: image-url("bg-mainVisual-pict_pc.jpg");
+  height: 100%;
 
-  &__section {
-    color: $bg_font-color;
+  .wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    .wrapper__top {
+      padding: 15px 60px 0 60px;
+      display: flex;
+      
+      &__icon {
+        width: 140px;
+        padding-bottom: 10px;
+        padding-right: 30px;
+      }
+      &__searchBox {
+        width: 870px;
+        height: 36px;
+        margin-top: 5px;
+        display: flex;
+        font-size: $searchBox_size;
+        
+        &__input {
+          height: 32px;
+          width: 100%;
+        }
+        &__icon {
+          background-color: $icon_bg_color;
+          width: 20px;
+          height: 20px;
+          padding: 8px;
+          display: inline-block;
+        }
+      }
+    }
+  
+    .wrapper__bottom {
+      max-width: 1040px;
+      height: 32px;
+      padding: 0 60px;
+      display: flex;
+      justify-content: space-between;
+      font-size: $header_list_size;
+      
+      ul {
+        display: flex;
+      }
+      &--left{
+        padding-right: 30px;
+      }
+      &--right{
+        padding-left: 16px;
+      }
+    }
   }
 }
 
 /********************
- * TOP CATEGORY
+ * TOP MAIN 
 ********************/
+.topMain {
+  width: 100%;
+  height: 100%;
+
+  /********************
+  * TOP VISUAL
+  ********************/
+  .topVisual {
+    height: 560px;
+    width: 100%;
+    background-size: cover;
+    background-image: image-url("bg-mainVisual-pict_pc.jpg");
+    background-position-x: 50%;
+
+    &__wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+
+      &__about {
+        padding: 200px 60px 0 60px;
+        color: $bg_font-color;
+        h1 {
+          margin-bottom: 10px;
+          text-shadow: 1px 1px 5px #D6D5D9,
+                      -1px 1px 5px #D6D5D9,
+                      1px -1px 5px #D6D5D9,
+                      -1px -1px 5px #D6D5D9;
+        }
+        p {
+          text-shadow: 1px 1px 1px #D6D5D9,
+                      -1px 1px 1px #D6D5D9,
+                      1px -1px 1px #D6D5D9,
+                      -1px -1px 1px #D6D5D9;
+        }
+      }
+      &__dlBannar {
+        padding-left: 60px;
+        display: flex;
+
+        &--apple {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  /********************
+  * TOP REASON
+  ********************/
+  .topReason {
+    padding: 60px 20px;
+
+    &__title {
+      text-align: center;
+
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 70px;
+        height: 4px;
+        background-color: $icon_bg_color;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__contents {
+      display: flex;
+      justify-content: center;
+
+      li {
+        display: flex;
+        position: relative;
+        
+        span {
+          position: absolute;
+          left: 20px;
+          padding: 10px 20px;
+          font-size: 30px;
+          color: #fff;
+          background-color: $icon_bg_color;
+        }
+      }
+
+      &__list {
+        max-width: 306px;
+        margin: 0 20px;
+        width: calc(100% - 40px);
+
+        h2 {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  /********************
+  * TOP CATEGORY
+  ********************/
+
+}
