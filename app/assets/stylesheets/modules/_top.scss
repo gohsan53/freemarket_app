@@ -61,7 +61,7 @@ header {
 }
 
 /********************
- * TOP MAIN 
+ * TOP MAIN グローバルに表示するviewとの切り分けdiv
 ********************/
 .topMain {
   width: 100%;
@@ -86,16 +86,16 @@ header {
         color: $bg_font-color;
         h1 {
           margin-bottom: 10px;
-          text-shadow: 1px 1px 5px #D6D5D9,
-                      -1px 1px 5px #D6D5D9,
-                      1px -1px 5px #D6D5D9,
-                      -1px -1px 5px #D6D5D9;
+          text-shadow: 1px 1px 5px $text_shadow-color,
+                      -1px 1px 5px $text_shadow-color,
+                      1px -1px 5px $text_shadow-color,
+                      -1px -1px 5px $text_shadow-color;
         }
         p {
-          text-shadow: 1px 1px 1px #D6D5D9,
-                      -1px 1px 1px #D6D5D9,
-                      1px -1px 1px #D6D5D9,
-                      -1px -1px 1px #D6D5D9;
+          text-shadow: 1px 1px 1px $text_shadow-color,
+                      -1px 1px 1px $text_shadow-color,
+                      1px -1px 1px $text_shadow-color,
+                      -1px -1px 1px $text_shadow-color;
         }
       }
       &__dlBannar {
@@ -154,6 +154,91 @@ header {
         h2 {
           margin: 0 auto;
         }
+      }
+    }
+  }
+
+  /********************
+  * SUB VISUAL
+  ********************/
+  .subVisual {
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-image: image-url("bg-topMiddleDl-pict.jpg");
+    background-position-x: 50%;
+
+    &__wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+
+      &__about {
+        padding: 100px 20px 10px 20px;
+        color: $bg_font-color;
+        h2 {
+          margin-bottom: 10px;
+          text-shadow: 1px 1px 5px $text_shadow-color,
+                      -1px 1px 5px $text_shadow-color,
+                      1px -1px 5px $text_shadow-color,
+                      -1px -1px 5px $text_shadow-color;
+        }
+        p {
+          text-shadow: 1px 1px 1px $text_shadow-color,
+                      -1px 1px 1px $text_shadow-color,
+                      1px -1px 1px $text_shadow-color,
+                      -1px -1px 1px $text_shadow-color;
+        }
+      }
+      &__dlBannar {
+        padding-left: 20px;
+        display: flex;
+
+        &--apple {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  /********************
+  * TOP FEATURE
+  ********************/
+  .topFeature {
+    padding: 60px 20px;
+
+    &__title {
+      text-align: center;
+
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 70px;
+        height: 4px;
+        background-color: $icon_bg_color;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__contents {
+      display: flex;
+      justify-content: center;
+      width: calc(100% - 40px);
+
+      &__list {
+        margin: 0 20px;
+        max-width: 306px;
+        
+        &--image {
+          max-width: 219.33px;
+          width: calc(100% - 40px);
+          margin: 0 auto;
+          display: block;
+        }
+
+        &--title {
+          text-align: center;
+        }
+        
       }
     }
   }

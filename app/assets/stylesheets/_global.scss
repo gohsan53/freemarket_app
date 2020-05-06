@@ -8,6 +8,7 @@ $icon_bg_color: #56D0D2;
 $bg_font-color: #FFFFFF;
 $bg_border-color: #D6D5D9;
 $highlight-color: #3CCBCD;
+$text_shadow-color: rgb(59, 61, 59);
 
 // Font size
 $searchBox_size: 14px;
@@ -35,6 +36,10 @@ h1 {
 }
 h2 {
   font-size: 26px;
+}
+h3 {
+  font-size: 19px;
+  font-weight: bold;
 }
 
 p {
