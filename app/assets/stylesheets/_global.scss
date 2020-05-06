@@ -17,11 +17,23 @@ $header_list_size: 14px;
 // Font family
 @font-face {
   font-family: "Furima";
-  src: asset_url("NotoSansJP-Bold.otf") format("truetype");
+  src: asset_url("NotoSansJP-Regular.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
+/********************
+ * MIXIN
+********************/
+@mixin title-underline ($color:$icon_bg_color) {
+  content: '';
+        display: inline-block;
+        margin-top: 10px;
+        width: 70px;
+        height: 4px;
+        background-color: $color;
+        margin-bottom: 20px;
+}
 
 /********************
  * FURIMAのデフォルト設定
