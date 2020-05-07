@@ -2,13 +2,14 @@
  * 変数定義
 ********************/
 // Background color
-$icon_bg-color: #56D0D2;
+$icon_bg-color: #3CCACE;
 $section_bg-color: #F8F8F8;
+$footer_bg-color: #272727;
 
 // Font color
 $bg_font-color: #FFFFFF;
 $bg_border-color: #D6D5D9;
-$highlight-color: #3CCBCD;
+$highlight-color: #3CCACE;
 $text_shadow-color: rgb(59, 61, 59);
 
 // Font size
@@ -16,6 +17,7 @@ $searchBox_font-size: 14px;
 $headerList_font-size: 14px;
 $itemIndex_font-size: 16px;
 $tax_font-size: 10px;
+$footerList_font-size: 12px;
                 
 // Font family
 @font-face {
@@ -35,6 +37,12 @@ $tax_font-size: 10px;
     clear: both;
   }
 }
+@mixin bg_text-shadow ($size, $color:$text_shadow-color) {
+  text-shadow: 1px 1px $size $color,
+              -1px 1px $size $color,
+              1px -1px $size $color,
+              -1px -1px $size $color;
+}
 @mixin title-underline ($color:$icon_bg_color) {
   content: '';
         display: inline-block;
@@ -48,6 +56,9 @@ $tax_font-size: 10px;
 /********************
  * FURIMAのデフォルト設定
 ********************/
+* {
+  box-sizing: border-box;
+}
 a {
   text-decoration: none;
   color: #333333;
@@ -60,7 +71,7 @@ h2 {
   font-size: 26px;
 }
 h3 {
-  font-size: 19px;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -74,4 +85,5 @@ body {
 
 strong {
   color: $highlight-color;
+  font-weight: bold;
 }
