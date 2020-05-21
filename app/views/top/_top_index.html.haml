@@ -4,7 +4,7 @@
 
 .topIndex__contents
   = link_to '#', class: 'topIndex__contents__itemBox', id: 'newItems3rd' do 
-    = image_tag 'fish.png', class: 'topIndex__contents__itemBox--image', alt: '商品サンプル３'
+    = image_tag asset_path('fish.png'), class: 'topIndex__contents__itemBox--image', alt: '商品サンプル３'
     .topIndex__contents__itemBox--summary
       %name item3
       %ul{class: 'itemDetails'}
@@ -14,7 +14,7 @@
       %p (税込)
 
   = link_to '#', class: 'topIndex__contents__itemBox', id: 'newItems3rd' do 
-    = image_tag 'meat.png', class: 'topIndex__contents__itemBox--image', alt: '商品サンプル３'
+    = image_tag asset_path('meat.png'), class: 'topIndex__contents__itemBox--image', alt: '商品サンプル３'
     .topIndex__contents__itemBox--summary
       %name item2
       %ul{class: 'itemDetails'}
@@ -24,7 +24,7 @@
       %p (税込)
 
   = link_to '#', class: 'topIndex__contents__itemBox', id: 'newItems3rd' do 
-    = image_tag 'curry.png', class: 'topIndex__contents__itemBox--image', alt: '商品サンプル３'
+    = image_tag asset_path('curry.png'), class: 'topIndex__contents__itemBox--image', alt: '商品サンプル３'
     .topIndex__contents__itemBox--summary
       %name item1
       %ul{class: 'itemDetails'}
