@@ -1,11 +1,11 @@
 .wrapper
   .wrapper__top
     = link_to '#', class: 'wrapper__top__icon' do 
-      = image_tag asset_path('logo.png'), width: '140', height: '40.547', alt: 'FURIMAロゴ'
+      = image_tag asset_path('logo.png'), width: '140', alt: 'FURIMAロゴ'
     .wrapper__top__searchBox
       %input{ type: 'text', class: 'wrapper__top__searchBox__input', placeholder: 'キーワードから探す' }
       = link_to '#', class: 'wrapper__top__searchBox__icon' do
-        = image_tag asset_path('icon-search 1.png'), width: '19.656', height: '19.656', alt: '検索ボタン'
+        = image_tag asset_path('icon-search 1.png'), width: '19', alt: '検索ボタン'
 
   .wrapper__bottom
     %ul
