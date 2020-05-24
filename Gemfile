@@ -79,3 +79,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use haml for html
 gem 'haml-rails'
+
+gem 'devise'
