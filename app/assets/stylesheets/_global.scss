@@ -5,12 +5,14 @@
 $icon_bg-color: #3CCACE;
 $section_bg-color: #F8F8F8;
 $footer_bg-color: #272727;
+$upload_bg-color: #F5F5F5;
+$option_bg-color: #999999;
 
 // Font color
 $bg_font-color: #FFFFFF;
 $bg_border-color: #D6D5D9;
 $highlight-color: #3CCACE;
-$text_shadow-color: rgb(59, 61, 59);
+$text_shadow-color: rgb(183, 190, 183);
 
 // Font size
 $searchBox_font-size: 14px;
@@ -18,6 +20,8 @@ $headerList_font-size: 14px;
 $itemIndex_font-size: 16px;
 $tax_font-size: 10px;
 $footerList_font-size: 12px;
+$main_contents_font-size:14px;
+$main_title_font-size:16px;
                 
 // Font family
 @font-face {
@@ -52,6 +56,24 @@ $footerList_font-size: 12px;
         background-color: $color;
         margin-bottom: 20px;
 }
+@mixin dl_bannar ($sizeL:0, $sizeR:0) {
+  margin-left: $sizeL;
+  margin-right: $sizeR;
+  width: 372px;        
+  display: flex;
+  justify-content: space-between;
+}
+@mixin action-button($width, $bg-color) {
+  line-height: 40px;
+  width: $width;
+  background-color: $bg-color;
+  color: white;
+  text-align: center;
+  margin: 0 auto 80px auto;
+  border: none;
+  display: block;
+  cursor: pointer;
+}
 
 /********************
  * FURIMAのデフォルト設定
@@ -69,6 +91,7 @@ h1 {
 }
 h2 {
   font-size: 26px;
+  font-weight: bold;
 }
 h3 {
   font-size: 24px;
@@ -86,4 +109,8 @@ body {
 strong {
   color: $highlight-color;
   font-weight: bold;
+}
+
+::placeholder {
+  color: lightgray;
 }
