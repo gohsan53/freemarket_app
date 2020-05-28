@@ -20,8 +20,16 @@
           商品一覧
     %ul
       %li
+        = link_to '#', class: 'wrapper__bottom--right', id: 'username-btn' do
+          = current_user.name
+      %li
         = link_to '#', class: 'wrapper__bottom--right', id: 'login-btn' do
           ログイン
       %li
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'wrapper__bottom--right', id: 'logout-btn'
+      %li
         = link_to '#', class: 'wrapper__bottom--right', id: 'signup-btn' do
           新規会員登録
+      %li
+        = link_to edit_user_path(current_user), class: 'wrapper__bottom--right', id: 'edit-btn' do
+          編集
