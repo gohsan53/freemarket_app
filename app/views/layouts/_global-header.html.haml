@@ -26,8 +26,7 @@
         = link_to '#', class: 'wrapper__bottom--right', id: 'login-btn' do
           ログイン
       %li
-        = link_to '#', class: 'wrapper__bottom--right', id: 'logout-btn' do
-          ログアウト
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'wrapper__bottom--right', id: 'logout-btn'
       %li
         = link_to '#', class: 'wrapper__bottom--right', id: 'signup-btn' do
           新規会員登録
