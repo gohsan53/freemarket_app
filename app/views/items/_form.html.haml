@@ -9,12 +9,15 @@
         %label.sellFillOut__label--title 出品画像
         %span.sellFillOut__label--required 必須
       %p.sellFillOut__text 最大10枚までアップロードできます
-      = f.fields_for :images do |i|
-        .sellFillOut__uploadBox
-          %label.sellFillOut__uploadBox__itemPhotos
-            = i.file_field :src, class: 'uploadBox-file'
-            %i.fas.fa-camera.uploadBox-icon
-            %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+      #image-box
+        = f.fields_for :images do |i|
+          .sellFillOut__uploadBox{"data-index": "<%= image.index %>"}
+            %label.sellFillOut__uploadBox__itemPhotos
+              = i.file_field :src, class: 'uploadBox-file'
+              %span.uploadBox-remove 削除
+              %br
+              %i.fas.fa-camera.uploadBox-icon
+              %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
 
     %section.sellFillOut.sellItem
       .sellFillOut__label
