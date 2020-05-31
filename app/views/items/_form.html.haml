@@ -10,17 +10,17 @@
         %span.sellFillOut__label--required 必須
       %p.sellFillOut__text 最大10枚までアップロードできます
       = f.fields_for :images do |i|
-        = i.file_field :src
-          .sellFillOut__uploadBox
-            .sellFillOut__uploadBox__itemPhotos
-              %i.fas.fa-camera.uploadBox-icon
-              %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
-        %br
+        .sellFillOut__uploadBox
+          = f.label :src, class: 'sellFillOut__uploadBox__itemPhotos' do
+            %i.fas.fa-camera.uploadBox-icon
+            = i.file_field :src, class: 'uploadBox-file'
+            %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+
     %section.sellFillOut.sellItem
       .sellFillOut__label
         %label.sellFillOut__label--title 商品名
         %span.sellFillOut__label--required 必須
-      = f.text_field :name, placeholder: '40文字まで', required: true, autofocus: true, {class: 'sellFillOut__inputArea#sell-name'}
+      = f.text_field :name, placeholder: '40文字まで', required: true, autofocus: true, class: 'sellFillOut__inputArea#sell-name'
       .sellFillOut__alert
         #sell-name-alert
       .sellFillOut__label
@@ -101,11 +101,9 @@
         %span#profit ー
       %section.sellFillOut__submit
         .sellFillOut__submit__sellBtn__wrapper
-          = link_to '#' do
-            = f.submit '出品する', { class: 'sellFillOut__submit__sellBtn__wrapper--post' } 
+          = f.submit '出品する', class: 'sellFillOut__submit__sellBtn__wrapper--post' 
         .sellFillOut__submit__sellBtn__wrapper
-          = link_to '#' do
-            = f.button '下書きに保存', { class: 'sellFillOut__submit__sellBtn__wrapper--draft' }
+          = f.button '下書きに保存', { class: 'sellFillOut__submit__sellBtn__wrapper--draft' }
         = link_to '#', class: 'sellFillOut__submit__sellBtn--cansel' do
           もどる
         .sellFillOut__submit__caution
