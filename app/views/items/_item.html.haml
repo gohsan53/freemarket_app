@@ -1,0 +1,9 @@
+.content
+  %p= item.name
+  %p= item.explanation
+  %p= item.condition
+  %p= item.price
+.content
+  - item.images.each do |image|
+    = image_tag image.src.url
+    

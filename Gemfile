@@ -55,6 +55,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'dotenv-rails'
 end
 
 group :test do
@@ -81,3 +82,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 
 gem 'devise'
+
+gem 'carrierwave'
+gem 'mini_magick'
+
+gem 'font-awesome-sass', '~> 5.12.0'
+
+gem 'jquery-rails'
