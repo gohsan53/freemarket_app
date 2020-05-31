@@ -11,23 +11,22 @@
       %p.sellFillOut__text 最大10枚までアップロードできます
       = f.fields_for :images do |i|
         .sellFillOut__uploadBox
-          = f.label :src, class: 'sellFillOut__uploadBox__itemPhotos' do
-            %i.fas.fa-camera.uploadBox-icon
+          %label.sellFillOut__uploadBox__itemPhotos
             = i.file_field :src, class: 'uploadBox-file'
+            %i.fas.fa-camera.uploadBox-icon
             %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
 
     %section.sellFillOut.sellItem
       .sellFillOut__label
         %label.sellFillOut__label--title 商品名
         %span.sellFillOut__label--required 必須
-      = f.text_field :name, placeholder: '40文字まで', required: true, autofocus: true, class: 'sellFillOut__inputArea#sell-name'
+      = f.text_field :name, placeholder: '40文字まで', required: true, autofocus: true, class: 'sellFillOut__inputArea', id: 'sell-name'
       .sellFillOut__alert
         #sell-name-alert
       .sellFillOut__label
         %label.sellFillOut__label--title 商品の説明
         %span.sellFillOut__label--required 必須
-      %textarea.sellFillOut__inputArea#sell-explanation{ name: 'explanation', rows: '6', required: true, autofocus: true,
-                                                        placeholder: "商品の説明（1,000文字以内）\n（色、素材、重さ、定価、注意点など\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" }
+      = f.text_area :explanation, rows: 6, required: true, autofocus: true, class: 'sellFillOut__inputArea', id: 'sell-explanation', placeholder: "商品の説明（1,000文字以内）\n（色、素材、重さ、定価、注意点など\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
       .sellFillOut__wordCount
         %span#sell-word-count 0
         \/
@@ -35,47 +34,47 @@
       .sellFillOut__alert
         #sell-word-count-alert
 
-    -# %section.sellFillOut.sellDetail
-    -#   %p.sellFillOut__text 商品の詳細
-    -#   = form_with model: @category, local: true do |f|
-    -#     .sellFillOut__label
-    -#       %label.sellFillOut__label--title カテゴリー
-    -#       %span.sellFillOut__label--required 必須
-    -#     .sellFillOut__selectWrapper
-    -#       = embedded_svg('angle-down-solid.svg', class: 'select-arrow')
-    -#       = f.select :name, Category.names_i18n.invert, {}, {class: 'select-form'}
-    -#     -# Todo: ブランドの追加実装をしたら表示
-    -#     -# .sellFillOut__label
-    -#     -#   %label.sellFillOut__label--title ブランド
-    -#     -#   %span.sellFillOut__label--required.option 任意
-    -#     -# %input.sellFillOut__inputArea{ type: 'text', name: 'brand', required: true, autofocus: true,
-    -#     -#                               placeholder: '例）無印' }
+    %section.sellFillOut.sellDetail
+      %p.sellFillOut__text 商品の詳細
+      -# = form_with model: @category, local: true do |f|
+      -#   .sellFillOut__label
+      -#     %label.sellFillOut__label--title カテゴリー
+      -#     %span.sellFillOut__label--required 必須
+      -#   .sellFillOut__selectWrapper
+          -# = embedded_svg('angle-down-solid.svg', class: 'select-arrow')
+          -# = f.select :name, Category.names_i18n.invert, {}, {class: 'select-form'}
+        -# Todo: ブランドの追加実装をしたら表示
+        -# .sellFillOut__label
+        -#   %label.sellFillOut__label--title ブランド
+        -#   %span.sellFillOut__label--required.option 任意
+        -# %input.sellFillOut__inputArea{ type: 'text', name: 'brand', required: true, autofocus: true,
+        -#                               placeholder: '例）無印' }
+      .sellFillOut__label
+        %label.sellFillOut__label--title 商品の状態
+        %span.sellFillOut__label--required 必須
+      .sellFillOut__selectWrapper
+        -# = embedded_svg('angle-down-solid.svg', class: 'select-arrow')
+        = f.select :condition, [0, 1, 2], class: 'select-form'
+    -# Todo: 配送オプションの追加実装をしたら表示
+    -# %section.sellFillOut.sellDelivery
+    -#   .section.sellFillOut--wrapper
+    -#     %p.sellFillOut__text 配送について
+    -#     = link_to '#' do
+    -#       = icon('far', 'question-circle')
     -#   .sellFillOut__label
-    -#     %label.sellFillOut__label--title 商品の状態
+    -#     %label.sellFillOut__label--title 配送料の負担
     -#     %span.sellFillOut__label--required 必須
-    -#   .sellFillOut__selectWrapper
-    -#     = embedded_svg('angle-down-solid.svg', class: 'select-arrow')
-    -#     = f.select :condition, Item.conditions_i18n.invert, {}, {class: 'select-form'}
-    -# -# Todo: 配送オプションの追加実装をしたら表示
-    -# -# %section.sellFillOut.sellDelivery
-    -# -#   .section.sellFillOut--wrapper
-    -# -#     %p.sellFillOut__text 配送について
-    -# -#     = link_to '#' do
-    -# -#       = icon('far', 'question-circle')
-    -# -#   .sellFillOut__label
-    -# -#     %label.sellFillOut__label--title 配送料の負担
-    -# -#     %span.sellFillOut__label--required 必須
-    -# -#   %select.sellFillOut__inputArea{ name: 'postage', required: true, autofocus: true }
-    -# -#     %option{ value: '' } 選択してください
-    -# -#     %option{ value: 'INCLUDED' } 送料込み
-    -# -#     %option{ value: 'COD' } 着払い
-    -# -#   .sellFillOut__label
-    -# -#     %label.sellFillOut__label--title 発送までの日数
-    -# -#     %span.sellFillOut__label--required 必須
-    -# -#   %select.sellFillOut__inputArea{ name: 'delivery-date', required: true, autofocus: true }
-    -# -#     %option{ value: '' } 選択してください
-    -# -#     %option{ value: '1' } 1〜2日で発送
-    -# -#     %option{ value: '2' } 3〜4日で発送
+    -#   %select.sellFillOut__inputArea{ name: 'postage', required: true, autofocus: true }
+    -#     %option{ value: '' } 選択してください
+    -#     %option{ value: 'INCLUDED' } 送料込み
+    -#     %option{ value: 'COD' } 着払い
+    -#   .sellFillOut__label
+    -#     %label.sellFillOut__label--title 発送までの日数
+    -#     %span.sellFillOut__label--required 必須
+    -#   %select.sellFillOut__inputArea{ name: 'delivery-date', required: true, autofocus: true }
+    -#     %option{ value: '' } 選択してください
+    -#     %option{ value: '1' } 1〜2日で発送
+    -#     %option{ value: '2' } 3〜4日で発送
     %section.sellFillOut.sellPrice
       .section.sellFillOut--wrapper
         %p.sellFillOut__text 価格（¥300〜9,999,999）
@@ -88,8 +87,7 @@
             %span.sellFillOut__label--required 必須
           .price-box
             %span ¥
-            %input.sellFillOut__label--input#sell-price{ type: 'number', style: 'text-align: right',
-                                                        placeholder: '0' }
+            = f.number_field :price, class: 'sellFillOut__label--input', id: 'sell-price', style: 'text-align: right', placeholder: 0
         .sellFillOut__alert
           #sell-price-alert
       .sellFillOut__label--wrapper.fee-and-profit
