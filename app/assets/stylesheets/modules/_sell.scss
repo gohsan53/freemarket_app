@@ -119,8 +119,8 @@
 
       &__itemPhotos {
         width: 100%;
-        height: 100%;
-        padding: 40px 0 20px 0;
+        height: calc(100% - 20px);
+        padding: 40px 0 5px 0;
         text-align: center;
         cursor: pointer;
         display: block;
@@ -136,7 +136,13 @@
         }
       }
       .uploadBox-remove {
-        height: 100%;
+        height: 20px;
+        width: 40px;
+        position: relative;
+        left: calc(50% - 20px);
+        float: left;
+        text-align: center;
+        cursor: pointer;
       }
     }
     &__inputArea {

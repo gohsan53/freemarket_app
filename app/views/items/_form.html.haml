@@ -11,8 +11,8 @@
       %p.sellFillOut__text 最大10枚までアップロードできます
       #image-box
         #previews
-          -if @item.persisted?
-            -@item.images.each_with_index do |image, i|
+          - if @item.persisted?
+            - @item.images.each_with_index do |image, i|
               = image_tag image.src.url, data: {index: i}, width: 100, height: 100
         = f.fields_for :images do |i|
           .sellFillOut__uploadBox{"data-index": "<%= image.index %>"}
@@ -22,6 +22,10 @@
               %i.fas.fa-camera.uploadBox-icon
               %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
             .uploadBox-remove 削除
+        - if @item.persisted? 
+          .js-file_group{"data-index": "<%= @product.images.count %>"}
+            = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'uploadBox-file' 
+            .uploadBox-remove 削除 
 
     %section.sellFillOut.sellItem
       .sellFillOut__label
