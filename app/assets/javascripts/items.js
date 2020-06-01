@@ -2,9 +2,13 @@ $(document).on('turbolinks:load', ()=> {
   // 画像用のinputを生成する関数
   const buildFileField = (index)=> {
     const html = `<div data-index="${index}" class="sellFillOut__uploadBox">
-                    <input class="uploadBox-file" type="file"
-                    name="item[images_attributes][${index}][src]"
-                    id="item_images_attributes_${index}_src"><br>
+                    <label class='sellFillOut__uploadBox__itemPhotos'>
+                      <input class="uploadBox-file" type="file"
+                      name="item[images_attributes][${index}][src]"
+                      id="item_images_attributes_${index}_src"><br>
+                      <i class='fas fa-camera uploadBox-icon'></i>
+                      <p>ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード</p>
+                    </label>
                     <div class="uploadBox-remove">削除</div>
                   </div>`;
     return html;
