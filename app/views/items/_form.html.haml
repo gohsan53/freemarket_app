@@ -14,18 +14,21 @@
           - if @item.persisted?
             - @item.images.each_with_index do |image, i|
               = image_tag image.src.url, data: {index: i}, width: 100, height: 100
-        = f.fields_for :images do |i|
+        = f.fields_for :images do |image|
           .sellFillOut__uploadBox{"data-index": "<%= image.index %>"}
             %label.sellFillOut__uploadBox__itemPhotos
-              = i.file_field :src, class: 'uploadBox-file'
+              =image.file_field :src, class: 'uploadBox-file'
               %br
-              %i.fas.fa-camera.uploadBox-icon
+              %image.fas.fa-camera.uploadBox-icon
               %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
             .uploadBox-remove 削除
+          - if @item.persisted?
+            .checkBox
+              = image.check_box :_destroy, data: {index: image.index}, class: 'hidden-destroy'
         - if @item.persisted? 
-          .js-file_group{"data-index": "<%= @product.images.count %>"}
-            = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'uploadBox-file' 
-            .uploadBox-remove 削除 
+          .sellFillOut__uploadBox{"data-index": "<%= @item.images.count %>"}
+            = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'uploadBox-file' 
+            .uploadBox-remove 削除
 
     %section.sellFillOut.sellItem
       .sellFillOut__label
