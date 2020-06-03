@@ -2,7 +2,13 @@
   %header.sellHeader
     = link_to '#' do
       = image_tag asset_path('logo.png'), width: 185, alt: 'FURIMAロゴ'
-
+  .errorBox
+    - if @item.errors.any?
+      .errorBox__errors
+        %h2="#{@item.errors.full_messages.count}件のエラーが発生しました。"
+        %ul
+          - @item.errors.full_messages.each do |message|
+            %li= message
   = form_with model: @item, local: true do |f|
     %section.sellFillOut.sellImage
       .sellFillOut__label
