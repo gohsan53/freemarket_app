@@ -112,8 +112,6 @@
         height: 112px;
       }
       background-color: $upload_bg-color;
-      display: flex;
-      justify-content: center;
       align-items: center;
       border-style: dotted;
       border-width: 2px;
@@ -121,14 +119,14 @@
 
       &__itemPhotos {
         width: 100%;
-        height: 100%;
-        padding: 40px 0 20px 0;
+        height: calc(100% - 20px);
+        padding: 40px 0 5px 0;
         text-align: center;
         cursor: pointer;
-        display: inline-block;
+        display: block;
 
         .uploadBox-file {
-          display: none;
+          // display: none;
         }
         .uploadBox-icon {
           font-size: 24px;
@@ -137,6 +135,20 @@
           font-size: 12px;
         }
       }
+      .uploadBox-remove {
+        height: 20px;
+        width: 40px;
+        position: relative;
+        left: calc(50% - 20px);
+        float: left;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+    .checkBox {
+      width: 100%;
+      height: 30px;
+      background-color: yellow;
     }
     &__inputArea {
       width: 100%;
